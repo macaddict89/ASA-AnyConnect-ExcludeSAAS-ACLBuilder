@@ -118,7 +118,23 @@ print_acl_lines(
     ips=webex_ips,
     section_comment="IPv4 and IPv6 destinations for Cisco Webex",
 )
-
+#RingCentral Office - Per https://support.ringcentral.com/s/article/9233?language=en_US#6.Supernets
+ringcentral_ips = [
+    "66.81.240.0/20",
+    "80.81.128.0/20",
+    "103.44.68.0/22",
+    "104.245.56.0/21",
+    "185.23.248.0/22",
+    "192.209.24.0/21",
+    "199.68.212.0/22",
+    "199.255.120.0/22",
+    "208.87.40.0/22",
+]
+print_acl_lines(
+    acl_name=acl_name,
+    ips=ringcentral_ips,
+    section_comment="IPv4 and IPv6 destinations for RingCentral Office",
+)
 # Edited. April 1st 2020
 # Per advice from Microsoft they do NOT advise using dynamic split tunneling for their properties related to Office 365
 #
